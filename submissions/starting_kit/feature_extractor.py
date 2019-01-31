@@ -43,8 +43,10 @@ def extract_date_data(df):
     return df_new
 
 # Fonction pour réduire le train
-def downsample_data(df , y):
-    df_new = pd.concat([df, y], axis=1, sort=False)
-    df_new  = df_new.drop(df_new.query('n_collisions == 0').sample(frac=.9).index)
+def downsample_data(df, y, factor):
+    df_new = df.copy()
+    df_new['n_collisions'] = y
+    df_new  = df_new.drop(df_new.query('n_collisions == 0').sample(frac=factor).index)
     df =  df_new.iloc[:,:-1]
-    return df 
+    y = (df_new.iloc[:,-1]).values
+    return df, y.reshape((len(y), 1))
