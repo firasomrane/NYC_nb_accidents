@@ -24,7 +24,7 @@ Open a terminal and
 
 #### Local notebook
 
-Get started on this RAMP with the [dedicated notebook](NYC_nb_accidents.ipynb).
+Get started on this RAMP with the [dedicated notebook](https://github.com/rslaoui/NYC_nb_accidents/blob/master/NYC_collisions_starting_kit.ipynb).
 
 
 3. install the `google_drive_downloader` library (if not already done) in order
