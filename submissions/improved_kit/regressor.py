@@ -35,7 +35,6 @@ class Regressor(BaseEstimator):
     def predict(self, X):
         y_pred = self.best_rfr.predict(X).round().astype(int) #Predict with the best regressor found during the RandomizedSearch
         return y_pred.reshape((len(y_pred), 1))
-        #return y_pred si bug
     
     @staticmethod
     def downsample_data(df, y, factor):
